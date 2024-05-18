@@ -1,0 +1,161 @@
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s ease-out;
+}
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.navbar {
+  position: absolute; /* Add this line to fix the navbar position */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0;
+  width: 100%; /* Make it span the full width of the viewport */
+  background-color: #56aeff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* Optionally add a z-index to make sure it stays above other content */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;  
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 85px;  
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar-right li {
+  margin-right: 15px; /* Add some spacing between the links (optional) */
+}
+
+.navbar-right li a {
+  text-decoration: none; /* Remove the underline */
+  font-size: 18px; /* Add the desired font size for the navigation links */
+  color: black;
+}
+
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.5); /* Background color with 50% opacity */
+}
+
+html::-webkit-scrollbar-thumb{
+  background:#ffa559;
+  border-radius: 5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px; /* Increase the heading font size */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 30px; /* Increase the logo font size for smaller screens */
+    padding: 0 10px;
+  }
+
+  .login-form {
+    width: 90%;
+    top: 150px;
+  }
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url("Gotham-Black.otf");
+  format: truetype;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the container height to full viewport height */
+}
+
+.content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%; /* Adjust the width as desired */
+  max-width: 90%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.content-wrapper {
+  padding: 40px; /* Add some padding to create space between content and background */
+}
+
+/* Add a horizontal rule style */
+hr {
+  border: 1px solid #56aeff; /* Set the border style for the horizontal rule */
+  margin: 20px 0; /* Adjust the margin as desired to create space above and below the rule */
+}
+
+/* Center and resize images */
+.content-wrapper img {
+  display: block; /* Ensure images are block elements to center them */
+  margin: 0 auto; /* Center images horizontally */
+  width: 100%; /* Set the maximum width of images to their original size */
+  max-width: 100%;
+  height: auto; /* Preserve the aspect ratio of images */
+}
+
+.highlight {
+  background-color: yellow;
+  display: inline;
+}
+
+.bottom-buttons {
+  position: fixed;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.back-button,
+.next-button {
+  background-color: #ffa559;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next-button {
+  float: right;
+  margin-right: 100px;
+}

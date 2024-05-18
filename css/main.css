@@ -1,0 +1,178 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.5); /* Background color with 50% opacity */
+}
+
+html::-webkit-scrollbar-thumb{
+  background:#ffa559;
+  border-radius: 5rem;
+}
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.navbar {
+  position: absolute; /* Add this line to fix the navbar position */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0;
+  width: 100%; /* Make it span the full width of the viewport */
+  background-color: #56aeff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* Optionally add a z-index to make sure it stays above other content */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;  
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 85px;  
+  text-decoration: none;
+  list-style: none;
+  
+}
+
+.navbar-right li {
+  margin-right: 15px; /* Add some spacing between the links (optional) */
+}
+
+.navbar-right li a {
+  text-decoration: none; /* Remove the underline */
+  font-size: 18px; /* Add the desired font size for the navigation links */
+  color: black;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.thinker-container {
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+.thinker-container img {
+  max-width: 40%;
+  height: auto;
+}
+
+.text-container {
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+
+.text {
+  color: rgba(11, 2, 2, 1);
+  font-size: 30px;
+  text-align: justify;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffa559;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition-duration: 0.3s;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+input[type="checkbox"] {
+  display: none;
+} 
+
+@media (max-width: 768px) {
+  .logo {
+      font-size: 25px;
+  }
+  
+  .menu-icon {
+      display: block;
+  }
+  
+  .menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+  }
+  
+  .menu li {
+      margin: 10px 0;
+  }
+  
+  .section {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .thinker-container {
+      order: 2;
+  }
+  
+  .text-container {
+      order: 1;
+  }
+  
+  .text {
+      font-size: 20px;
+  }
+  
+  .btn {
+      padding: 15px 30px;
+  }
+  
+}
+
+@media (max-width: 966px){
+  .logo {
+    font-size: 30px;
+}
+
+.menu li {
+  font-size: 14px;
+}
+
+}
+

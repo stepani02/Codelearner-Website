@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+}
+
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.5); /* Background color with 50% opacity */
+}
+
+html::-webkit-scrollbar-thumb{
+  background:#ffa559;
+  border-radius: 5rem;
+}
+
+header {
+  background-color: #56aeff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-left: 35px;
+}
+
+.logo span {
+  color: #ffa559;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: absolute;
+  top: 30px; /* Adjust the top position to position below the navbar */
+  right: 0; /* Position the menu to the right side */
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+  text-align: right;
+  font-size: 20px;
+}
+
+.menu li {
+  display: block;
+  margin-right: 10px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: block;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  right: 15px; /* Adjust the right distance to position the menu-icon properly */
+}
+
+.menu.show-menu {
+  display: flex;
+}
+
+/* Add this to your main1.css file */
+.welcome-message {
+  margin: 15px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; /* Adjust the top distance to position the welcome message properly */
+  right: 30px; /* Adjust the right distance to position the welcome message properly */
+  color: black;
+  font-weight: bold;
+  font-family: Gotham, sans-serif;
+}
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .image-container img {
+    width: 75%;
+    height: auto;
+  }
+  
+  .image-container p {
+    color: rgba(11, 2, 2, 1);
+    font-size: 30px;
+    text-align: justify;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 80%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+    text-align: center;
+  }
+  .column {
+    width: 100%;
+    padding: 0.5em 0;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    color: #1f003b;
+  }
+  .card {
+    box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+    text-align: center;
+    height: 350px;
+  }
+  .card .img-container {
+    width: 8em;
+    height: 8em;
+    background-color: #ffa559;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .card h3 {
+    font-weight: 500;
+  }
+  .card p {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+  }
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4em;
+  }
+  .card:hover {
+    background: linear-gradient(#abd7ff, #56aeff);
+    color: #ffffff;
+  }
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 1em 7em;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em;
+    }
+    .card {
+      padding: 5em 1em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 1em;
+      margin-bottom: 20px;
+    }
+  }
+
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 50px;
+    }
+    
+    .menu-icon {
+      display: block;
+    }
+    
+    .menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+    
+    .menu li {
+      margin: 10px 0;
+    }
+    
+    .btn {
+      padding: 15px 30px;
+    }
+  }
+  
+  @media (max-width: 966px) {
+    .logo {
+      font-size: 30px;
+    }
+    
+    .menu li {
+      font-size: 14px;
+    }
+  }
+  
+  /*@font-face {
+    font-family: Gotham;
+    src: url("Gotham-Black.otf");
+    format: truetype;
+  }
+  */
+  

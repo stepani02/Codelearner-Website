@@ -1,0 +1,238 @@
+/* coding with nick */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+  overflow: auto; /* Hide any content that overflows the container */
+
+}
+
+header {
+  background-color: #56aeff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-left: 35px;
+}
+
+.logo span {
+  color: #ffa559;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: absolute;
+  top: 30px; /* Adjust the top position to position below the navbar */
+  right: 0; /* Position the menu to the right side */
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+  text-align: right;
+  font-size: 20px;
+}
+
+.menu li {
+  display: block;
+  margin-right: 10px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: block;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  right: 15px; /* Adjust the right distance to position the menu-icon properly */
+}
+
+.menu.show-menu {
+  display: flex;
+}
+
+/* Add this to your main1.css file */
+.welcome-message {
+  margin: 15px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; /* Adjust the top distance to position the welcome message properly */
+  right: 30px; /* Adjust the right distance to position the welcome message properly */
+  color: black;
+  font-weight: bold;
+  font-family: Gotham, sans-serif;
+}
+
+input[type="checkbox"] {
+  display: none;
+} 
+
+.quiz-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow: hidden;
+  margin: 0 auto; /* Add this line to center the container horizontally */
+  margin-top: 200px; /* Add this line to add some top margin */
+  font-family: Gotham;
+}
+
+.quiz-header {
+  padding: 4rem;
+  position: relative; /* Add this line to make the button relative to the quiz-header */
+}
+
+button {
+  font-family: Gotham;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffa559;
+  width: 160px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+  /* position: absolute; Remove this line to allow normal flow positioning */
+  /* left: 50%; Remove this line to allow normal flow positioning */
+  /* transform: translateX(-50%); Remove this line to allow normal flow positioning */
+  border: none;
+  outline: none;
+  margin-top: 20px; /* Add margin to separate the button from the choices */
+}
+
+h2{
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+button {
+  font-family: Gotham;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffa559;
+  width: 160px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+  margin-top: 20px;
+  display: block; /* Add this line to change the button's display to block */
+  margin: 0 auto; /* Add this line to center the button horizontally */
+}
+
+
+button:hover, button:focus, button:active{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+}
+button:focus{
+  outline: none;
+  background-color: #44b927;
+}
+
+input[type="checkbox"] {
+  display: none;
+} 
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 25px;
+    
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  button {
+    position: absolute;
+    text-align: center;
+    
+    transform: none;
+    margin: -50px -70px; /* Add some margin between the quiz container and the button */
+    left: 50%;
+  }  
+
+}
+
+.button-container {
+  display: flex; /* Display the buttons in a row */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 20px; /* Add some margin to separate the buttons from the text */
+}
+
+.button-container button {
+  margin: 0 5px; /* Add some spacing between the buttons */
+}

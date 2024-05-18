@@ -1,0 +1,201 @@
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s ease-out;
+}
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+  margin-bottom: 50px;
+}
+
+header {
+  background-color: #56aeff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-left: 35px;
+}
+
+.logo span {
+  color: #ffa559;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: absolute;
+  top: 30px; /* Adjust the top position to position below the navbar */
+  right: 0; /* Position the menu to the right side */
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+  text-align: right;
+  font-size: 20px;
+}
+
+.menu li {
+  display: block;
+  margin-right: 10px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: block;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  right: 15px; /* Adjust the right distance to position the menu-icon properly */
+}
+
+.menu.show-menu {
+  display: flex;
+}
+
+/* Add this to your main1.css file */
+.welcome-message {
+  margin: 15px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; /* Adjust the top distance to position the welcome message properly */
+  right: 30px; /* Adjust the right distance to position the welcome message properly */
+  color: black;
+  font-weight: bold;
+  font-family: Gotham, sans-serif;
+}
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.5); /* Background color with 50% opacity */
+}
+
+html::-webkit-scrollbar-thumb{
+  background:#ffa559;
+  border-radius: 5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px; /* Increase the heading font size */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 30px; /* Increase the logo font size for smaller screens */
+    padding: 0 10px;
+  }
+
+  .login-form {
+    width: 90%;
+    top: 150px;
+  }
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url("Gotham-Black.otf");
+  format: truetype;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the container height to full viewport height */
+}
+
+.content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%; /* Adjust the width as desired */
+  max-width: 90%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.content-wrapper {
+  padding: 40px; /* Add some padding to create space between content and background */
+}
+
+/* Add a horizontal rule style */
+hr {
+  border: 1px solid #56aeff; /* Set the border style for the horizontal rule */
+  margin: 20px 0; /* Adjust the margin as desired to create space above and below the rule */
+}
+
+/* Center and resize images */
+.content-wrapper img {
+  display: block; /* Ensure images are block elements to center them */
+  margin: 0 auto; /* Center images horizontally */
+  width: 100%; /* Set the maximum width of images to their original size */
+  max-width: 100%;
+  height: auto; /* Preserve the aspect ratio of images */
+}
+
+.highlight {
+  background-color: yellow;
+  display: inline;
+}
+
+.bottom-buttons {
+  position: fixed;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.back-button,
+.next-button {
+  background-color: #ffa559;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next-button {
+  float: right;
+  margin-right: 100px;
+}
+
+input[type="checkbox"] {
+  display: none;
+} 

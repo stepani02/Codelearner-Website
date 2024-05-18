@@ -1,0 +1,137 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+
+    header("Location: login.php"); 
+    exit();
+}
+
+$firstName = $_SESSION['first_name'];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/ModulesStyle1Main.css">
+    <title>CodeLearner</title>
+</head>
+<body>
+
+<header>
+        <nav>
+            <a href="main.php" class="logo">
+                <span style="color: #ffa559">&lt;</span>
+                <span style="color: black">Code</span>
+                <span style="color: white">Learner</span>
+                <span style="color: #ffa559">&gt;</span>
+            </a>            
+            <div class="welcome-message">
+                <?php echo "Welcome, $firstName!"; ?>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu">
+                <li><a href="main.php" style="color: #ffa559;">Home</a></li>
+                <li><a href="WorkplaceMain.php">Workplace</a></li>
+                <li><a href="aboutusMain.php">About Us</a></li>
+                <li><a href="updateProfile.php">Settings</a></li>
+                <li><a href="index.php">Logout</a></li>
+            </ul>
+        </nav>
+</header>
+
+        <div class="container">
+        <div class="content">
+        <div class="content">
+        <h1>Chapter 2</h1>
+        <div class="content-wrapper">
+        <h2>HTML Editors</h2>
+        <br><p>A simple text editor is all you need to learn HTML!</p><hr>
+
+        <h3>Learn HTML Using Notepad or TextEdit</h3><br>
+        <ul>
+            <p>Web pages can be created and modified by using professional HTML editors.</p>
+            <p>However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).</p>
+            <p>We believe that using a simple text editor is a good way to learn HTML.</p>
+            <p>Follow the steps below to create your first web page with Notepad or TextEdit.</p><hr>
+        </ul>
+
+        <h3>Step 1: Open Notepad (PC)</h3><br>
+        <ul>
+            <p>Windows 8 or later:</p>
+            <p>Open the Start Screen (the window symbol at the bottom left on your screen). Type Notepad.</p>
+            <p>Windows 7 or earlier:</p>
+            <p>Open Start > Programs > Accessories > Notepad</p><hr>
+        </ul>
+
+        <h3>Step 1: Open TextEdit (Mac)</h3><br>
+        <ul>
+            <p>Open Finder > Applications > TextEdit</p>
+            <p>Also change some preferences to get the application to save files correctly. In Preferences > Format > choose "Plain Text"</p>
+            <p>Then under "Open and Save", check the box that says "Display HTML files as HTML code instead of formatted text".</p>
+            <p>Then open a new document to place the code.</p><hr>
+        </ul>
+
+        <h3>Step 2: Write Some HTML</h3>
+        <ul>
+        <br><p>Write or copy the following HTML code into Notepad:</p>
+            <img src="images/2step2.png" alt="STEP2"><hr>
+        </ul>
+
+        <h3>Step 3: Save the HTML Page</h3>
+        <ul>
+        <br><p>Save the file on your computer. Select File > Save as in the Notepad menu.</p>
+            <p>Name the file "index.htm" and set the encoding to UTF-8 (which is the preferred encoding for HTML files).</p>
+            <img src="images/2step3.png" alt="STEP3">
+            <p class="highlight"><strong>Tip:</strong> You can use either .htm or .html as file extension. There is no difference; it is up to you.</p><hr>
+        </ul>
+
+        <h3>Step 4: View the HTML Page in Your Browser</h3>
+        <ul>
+        <br><p>Open the saved HTML file in your favorite browser (double click on the file, or right-click - and choose "Open with").</p>
+            <p>The result will look much like this:</p>
+            <img src="images/2step4.png" alt="STEP4"><hr>
+        </ul>
+        <div class="bottom-buttons">
+        <a href="Modules1Main.php" class="back-button" onclick="markModuleAsDone(2)">Back</a>
+        <a href="module3Main.php" class="next-button" onclick="markModuleAsDone(2)">Next</a>
+    </div>
+    </div>    
+        </div>
+        
+             </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".menu-icon").click(function(){
+                $(".menu").slideToggle();
+            });
+        });
+    </script>
+
+<script>
+  function markModuleAsDone(moduleNumber) {
+    $.ajax({
+      type: 'POST',
+      url: 'store_module_status.php', 
+      data: {
+        module: moduleNumber
+      },
+      success: function(response) {
+        console.log(response);
+      },
+      error: function(xhr, status, error) {
+        console.error(error); 
+        alert('Failed to mark the module as done. Please try again.');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

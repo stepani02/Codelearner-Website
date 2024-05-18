@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #56aeff;
+  color: white;
+  text-align: justify;
+  font-family: Gotham, sans-serif;
+}
+
+header {
+  background-color: #56aeff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-left: 35px;
+}
+
+a.logo span {
+  color: #ffa559;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: absolute;
+  top: 30px; /* Adjust the top position to position below the navbar */
+  right: 0; /* Position the menu to the right side */
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+  text-align: right;
+  font-size: 20px;
+}
+
+.menu li {
+  display: block;
+  margin-right: 10px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: block;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  right: 15px; /* Adjust the right distance to position the menu-icon properly */
+}
+
+.menu.show-menu {
+  display: flex;
+}
+
+/* Add this to your main1.css file */
+.welcome-message {
+  margin: 15px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; /* Adjust the top distance to position the welcome message properly */
+  right: 30px; /* Adjust the right distance to position the welcome message properly */
+  color: black;
+  font-weight: bold;
+  font-family: Gotham, sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 33.33%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-button {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffa559;
+  width: 160px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  transition-duration: 0.3s;
+  border: none;
+}
+
+.image-button:hover,
+.image-button:focus,
+.image-button:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+input[type="checkbox"] {
+  display: none;
+} 
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 25px;
+    
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  a.logo {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .menu-icon {
+    font-size: 18px;
+  }
+}
+
+ /*@font-face {
+  font-family: Gotham;
+  src: url("Gotham-Black.otf");
+  format: truetype;
+}
+*/

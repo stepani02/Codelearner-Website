@@ -1,0 +1,281 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #56aeff;
+  font-family: Gotham, sans-serif;
+  margin-bottom: 50px;
+}
+
+html::-webkit-scrollbar{
+  width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.5); /* Background color with 50% opacity */
+}
+
+html::-webkit-scrollbar-thumb{
+  background:#ffa559;
+  border-radius: 5rem;
+}
+
+.logo {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed; /* Add this line to fix the navbar position */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0;
+  width: 100%; /* Make it span the full width of the viewport */
+  background-color: #56aeff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* Optionally add a z-index to make sure it stays above other content */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;  
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 85px;  
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar-right li {
+  margin-right: 15px; /* Add some spacing between the links (optional) */
+}
+
+.navbar-right li a {
+  text-decoration: none; /* Remove the underline */
+  font-size: 18px; /* Add the desired font size for the navigation links */
+  color: black;
+}
+
+.container {
+  max-width: auto;
+  width: 80%;
+  display: block;
+  margin: 5% auto 0;
+}
+
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.container .row .youtube_video {
+  width: 60%;
+  background-color: #000;
+  position: relative;
+  padding-bottom: 33.25%;
+  height: 0;
+}
+
+.container .row .youtube_video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .item {
+  margin-right: 50px; /* Adjust the margin value as needed */
+  margin-top: 30px;
+}
+
+.container .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .gallery .item {
+  width: calc(96% / 4);
+  position: relative;
+}
+
+.container .gallery .item img {
+  width: 100%;
+  display: block;
+}
+  
+  .container .gallery .item .youtube_icon {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  
+  .container .gallery .item .youtube_icon:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .container .gallery .item .youtube_icon.active {
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 5px 5px 10px;
+            box-shadow: 5px 5px 10px;
+  }
+  
+  .container .gallery .item .youtube_icon.active img {
+    opacity: 0;
+  }
+  
+  .container .gallery .item .youtube_icon img {
+    width: 50px;
+  }
+
+  @media (max-width: 768px) {
+    /* Modify the styles for smaller screens */
+    .logo {
+      font-size: 25px;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+  
+    .container {
+      width: 90%;
+      margin: 10% auto 0;
+    }
+  
+    .container .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    .container .row .youtube_video {
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+  
+    .container .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .container .gallery .item {
+      width: calc(50% - 30px);
+      margin-right: 30px;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+    
+  }
+
+  @font-face {
+    font-family: Gotham;
+    src: url("Gotham-Black.otf");
+    format: truetype;
+  }
+
+/* Add this CSS at the end of the Videos style.css file */
+
+body:not(.logged-in) .item {
+  cursor: not-allowed;
+}
+
+body:not(.logged-in) #video_id {
+  pointer-events: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px; /* Adjusted border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjusted box shadow */
+  width: 80%;
+  max-width: 400px;
+  text-align: justify; /* Center the content */
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffa559; /* Orange color for buttons */
+  border: 1px solid #56aeff; /* Border color #56aeff for buttons */
+  color: #fff; /* White text color for buttons */
+  margin: 0 5px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transition for smooth hover effect */ 
+}
+
+.modal-buttons button:hover {
+  background-color: #56aeff; /* Change background color on hover */
+  border-color: #ffa559; /* Change border color on hover */
+  color: #fff; /* Change text color on hover */
+}
